@@ -1,14 +1,18 @@
 package domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Data
-class Product {
-    private String site;
+@NoArgsConstructor
+@AllArgsConstructor
+public class Product {
     private String name;
     private String brand;
-    private String url;
+    private String uri;
+    private String imageURI;
     private Price price;
 }
