@@ -1,7 +1,12 @@
 version: '3'
 services:
-  catalog-api:
-    image: "service-api"
+  marketplace-projector:
+    image: 350661628111.dkr.ecr.us-east-1.amazonaws.com/marketplace-projector
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+      args:
+       - JAR_FILE=build/libs/*.jar
     ports:
       - "8080:8080"
     environment:

@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 gradle clean build &&
-gradle docker &&
-docker-compose up
+docker-compose up --build

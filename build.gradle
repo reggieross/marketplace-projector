@@ -33,31 +33,10 @@ dependencyManagement {
 }
 
 group = 'rross'
-def imageName = 'marketplace-projector'
-def ecrRepo = '350661628111.dkr.ecr.us-east-1.amazonaws.com'
 
 bootJar {
     baseName = 'marketplace-projector'
     version '1.0-SNAPSHOT'
-}
-
-task unpack(type: Copy) {
-    dependsOn bootJar
-    from(zipTree(tasks.bootJar.outputs.files.singleFile))
-    into("build/dependency")
-}
-
-docker {
-    name "${imageName}:latest"
-    copySpec.from(tasks.unpack.outputs).into("dependency")
-    buildArgs(['DEPENDENCY': "dependency"])
-    noCache true
-}
-
-dockerRun {
-    name imageName
-    image "${imageName}"
-    ports '8080:8080'
 }
 
 dependencies {
@@ -68,7 +47,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.6'
 
     runtimeOnly 'org.postgresql:postgresql'
-\
+
     implementation 'com.amazonaws:aws-java-sdk-s3'
     implementation 'com.amazonaws:aws-java-sdk-ec2'
     implementation 'com.amazonaws:aws-java-sdk-sqs'
