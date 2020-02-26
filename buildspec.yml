@@ -7,6 +7,9 @@ phases:
       - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
+      - echo running tests
+      - gradle test
+      - echo building project
       - gradle clean build
       - docker build --build-arg JAR_FILE=build/libs/*.jar -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
@@ -14,4 +17,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 350661628111.dkr.ecr.us-east-1.amazonaws.com/marketplace-projector:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
