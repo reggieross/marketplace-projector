@@ -22,7 +22,6 @@ public class ProductRepository implements IProductRepository {
     public long upsertProduct(Product product, Optional<Long> brandId) {
         ProductEntity productEnt = ProductEntity.builder()
                 .name(product.getName())
-                .brandID(brandId.get())
                 .build();
 
 

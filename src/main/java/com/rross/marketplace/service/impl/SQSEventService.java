@@ -1,5 +1,6 @@
 package com.rross.marketplace.service.impl;
 
+import com.rross.marketplace.domain.model.Product;
 import com.rross.marketplace.domain.model.ProductRequest;
 import com.rross.marketplace.projector.IProjector;
 import org.slf4j.Logger;
@@ -28,10 +29,10 @@ public class SQSEventService implements ISQSEventService {
         logger.info("Received new message");
         try {
             ProductRequest request = ProductRequest.fromJSON(requestJSON);
-            catalogClient.createProduct(request.getProduct());
+            long id = this.catalogClient.createProduct(request.getProduct());
+            logger.info("Processed Product: " + id);
         } catch (Exception ex) {
-            logger.error("Encountered error while parsing message: " + requestJSON,ex);
-            throw new JMSException("Encountered error while parsing message.");
+            logger.info(requestJSON, ex);
         }
     }
 }
