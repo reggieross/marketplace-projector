@@ -87,7 +87,6 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
-    <property name="ExpandSpringBootSpringBootSettingsPanel" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -140,6 +139,7 @@
       <envs>
         <env name="POSTGRES_HOST" value="dev-marketplace-catalog.cjfkccsro3vy.us-east-1.rds.amazonaws.com" />
         <env name="POSTGRES_PW" value="2019Ianyfm" />
+        <env name="PORT" value="3041" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,7 +171,7 @@
       <workItem from="1582679510182" duration="1921000" />
       <workItem from="1582765389220" duration="1292000" />
       <workItem from="1582938402651" duration="8438000" />
-      <workItem from="1584758946678" duration="1600000" />
+      <workItem from="1584758946678" duration="2283000" />
     </task>
     <servers />
   </component>
@@ -189,10 +189,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584761526579">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584761526579" />
     <state x="573" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584759322478">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="573" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1584759322478" />
+    <state x="594" y="297" key="EnvironmentVariablesDialog" timestamp="1584761524021">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="594" y="297" key="EnvironmentVariablesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584761524021" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1584759175549">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
