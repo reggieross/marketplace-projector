@@ -12,3 +12,5 @@ services:
     environment:
       - POSTGRES_HOST=dev-marketplace-catalog.cjfkccsro3vy.us-east-1.rds.amazonaws.com:5432
       - POSTGRES_PW=${MARKETPLACE_CATALOG_DB_PW}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
